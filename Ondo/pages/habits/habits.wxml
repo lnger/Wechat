@@ -1,0 +1,27 @@
+<!--pages/habits/habits.wxml-->
+<page class="body0">
+  <image class="bgp" src="../../images/bgp_2.jpg"></image>
+  <view class="header">   
+    <view class='header-text'>我的习惯</view>
+    <navigator url="/pages/habits_add/habits_add">
+      <view class="modular1"><text class="fa-plus-square-o"></text></view> 
+    </navigator>  
+  </view>
+  <view class="header1">
+    <view class="header1-text">全部</view>
+    <view class="modular2"><text class="fa-chevron-up"></text></view>
+  </view>
+  
+  <navigator url="/pages/stat/stat?item={{1}}">
+  <view class="body">
+   <image class="habits-images" src="../../icon/chiyao.png" background-size="cover"></image>
+    <text class="name">吃药</text>
+    <text class="time">1天</text>
+    </view>  
+  </navigator>
+  <navigator url="/pages/habits_add/habits_add">
+    <view class="body1">
+      <view class="body-text">+ 添加习惯</view>  
+    </view>
+  </navigator> 
+</page>

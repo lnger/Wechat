@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="topBar">
+  <text class="clorks">今日习惯</text>
+  <view class="search">
+      <image src="../../icon/search.png" mode="aspectFit"></image>
+    <input style='display:inline-block;height:100%;margin-left: -50rpx;' placeholder-style='font-size:14px;letter-spacing:10rpx;' placeholder='输入习惯名'></input>
+   </view>
+</view>
+
+<view class="container">
+    <image class="bgp" src="../../images/bgp_4.jpg"></image>
+    <view class="grid_view">
+        <view class="item"  wx:for="{{icons}}">
+           <view class="item_icon" hover-class="item_click">
+                   <image src="{{item.pic}}"></image>
+           </view>  
+          <text>{{item.name}}</text>
+          <text wx:if="{{item.days}}">{{item.days}}</text>
+      </view>  
+    </view>
+</view>

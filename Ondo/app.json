@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/account/account",
+    "pages/habits/habits",
+    "pages/habits_add/habits_add",
+    "pages/timers/timers",
+    "pages/stat/stat",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#FEE251",
+    "backgroundColor": "#2BB6C9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/clork.png",
+        "selectedIconPath": "icon/clork_.png",
+        "text": "打卡"
+      },
+      {
+        "pagePath": "pages/habits/habits",
+        "iconPath": "icon/habit.png",
+        "selectedIconPath": "icon/habits_.png",
+        "text": "习惯"
+      },
+      {
+        "pagePath": "pages/timers/timers",
+        "iconPath": "icon/timer.png",
+        "selectedIconPath": "icon/timer_.png",
+        "text": "计时"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "iconPath": "icon/user.png",
+        "selectedIconPath": "icon/user_.png",
+        "text": "用户"
+      }
+    ]
+
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

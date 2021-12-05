@@ -1,0 +1,56 @@
+<!--pages/account/account.wxml-->
+<view class="topBar">
+  <text>用户管理</text>
+</view>
+<view class="container">
+  <image class="bgp" src="../../images/bgp_1.jpg"></image>
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view class="user_list">
+  <view class="list_body">
+  <navigator class="items" id="items_left" url="/pages/stat/stat?item={{1}}" bindtap="goStat">
+  <view>
+      <image src="../../icon/record_c.png">
+      </image>
+      <text>打卡记录</text>
+    </view>
+  </navigator>
+    <navigator class="items" id="items_right" url="/pages/stat/stat?item={{2}}" bindtap="goStat">
+    <view>
+      <image src="../../icon/record_l.png">
+      </image>
+       <text>日志</text>
+    </view>
+    </navigator>
+    <navigator class="items" id="items_left" url="/pages/stat/stat?item={{3}}" bindtap="goStat">
+    <view>
+       <image src="../../icon/record_t.png">
+       </image>
+       <text>计时记录</text>
+    </view>
+    </navigator>
+    <navigator class="items" id="items_right">
+    <view>
+     <image src="../../icon/set.png">
+      </image>
+      <text>设置</text>
+    </view>
+    </navigator>
+  </view>
+</view>

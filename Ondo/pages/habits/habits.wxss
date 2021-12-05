@@ -1,0 +1,119 @@
+/* pages/habits/habits.wxss */
+@import './font-awesome.wxss';
+@import './tylesheet.wxss';
+.bgp{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 454.5px;
+  opacity:0.8;
+}
+.body0{
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+
+}
+.header{
+     height:40px;
+     width: 100%;
+     background-color:#2bb6c9;
+     color: white;
+     font-weight: 800;
+}
+.header-text{
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 6px;
+  margin-left: 40%;
+  color: white;
+  border-bottom-width:10px;
+  border-bottom-color: white;
+}
+.modular1{
+  font-family: 'fontawesome';
+  color: white;
+  font-size: 25px;
+  float: right;
+  margin-top: 7px;
+  margin-right: 6px;
+}
+.header1{
+  display: block;
+  height: 34px;
+  width: 100%;
+  margin-top: 2px;
+}
+.header1-text{
+  font-size: 16px;
+  color: black;
+  float: left;
+  padding-top: 10px;
+  padding-left: 8px;
+}
+.modular2{
+  font-family: 'fontawesome';
+  font-size: 14px;
+  color: black;
+  float: right;
+  padding-top:10px ;
+  padding-right:8px;
+}
+.body{
+  display: block;
+  height: 58px;
+  width: 90%;
+  margin:auto;
+  margin-top: 30px;
+  background-color:bisque;
+  border-radius: 5px;
+  border: 1px bisque solid;
+  opacity: 0.9;
+}
+.habits-images{
+  display:block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-top: 9px;
+}
+.name{
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-top: 9px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.time{
+  display: block;
+  float: right;
+  font-size: 26px;
+  font-weight: 600; 
+  width: 50px;
+  height: 40px;
+  margin-right: 5px;
+  margin-top: 9px;
+}
+.body1{
+  display: block;
+  height: 58px;
+  width: 90%;
+  margin:auto;
+  margin-top: 30px;
+  background-color:#DCDCDC;
+  border-radius: 5px;
+  opacity: 0.7;
+}
+.body-text{
+  padding-top: 16px;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}

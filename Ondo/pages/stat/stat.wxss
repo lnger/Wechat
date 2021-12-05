@@ -1,0 +1,168 @@
+/* pages/stat/stat.wxss */
+.bgp{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 530px;
+    opacity:0.8;
+  }
+.topBar{
+    display: block;
+    height: 125rpx;
+    text-align: center;
+    background-color: #008da0;
+    margin-bottom: 1px;
+  }
+  .topBar text{
+    display: block;
+    padding-top: 10rpx;
+    font-size: 25rpx;
+    color:white;
+    font-weight: 800;
+  }
+  .topBar .title{
+    font-size: 48rpx;
+    font-weight: 800;
+    color: white;
+  }
+  .container{
+      position: relative;
+      width: 100%;
+      height: 700rpx;
+  }
+  .stat_list{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      opacity:0.93;
+  }
+.calendar_title{
+    width: 100%;
+    padding-top: 5rpx;
+    justify-content: space-between;
+    font-size: 12pt;
+    color: white;
+    font-weight: 800;
+    background-color: #2BB6C9;
+}
+.calendar_title{
+    display:flex;
+    align-items: center;
+}
+.calendar_title .icon image{
+    width: 60rpx; 
+    height: 60rpx;
+    margin: 5rpx auto;
+}
+/* 日历 */
+.calendar{
+    width: 100%;
+    background: #fff;
+    border-bottom-right-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    padding: 0 0 20rpx;
+    font-weight: 600;
+}
+.header{font-size: 0;width: 100%;margin: 0 auto;}
+.header>view{
+    display: inline-block;
+    width: 14.285%;
+    background-color: #caf0f5;
+    color: rgb(255, 255, 255);
+    font-size: 40rpx;
+    text-align: center;
+    border-bottom: 1px solid #ffffff;
+    padding: 20rpx 0;
+}
+.weekMark{position: relative;width: 80%;margin: 0 auto;}
+.weekMark view{position: absolute;bottom: 0;left: 0;width: 100%;border-bottom: 2px solid #69f;}
+.date-box{font-size: 0;padding: 10rpx 0;width: 100%;margin: 0 auto;background-color: #f4feff;}
+.date-box>view{
+    position: relative;
+    display: inline-block;
+    width: 14.285%;
+    color: #666;
+    text-align: center;
+    vertical-align: middle;
+}
+.date-head{height: 60rpx;line-height: 60rpx;font-size: 12pt;}
+.nowDay .date-head{
+    width: 60rpx;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    background-color: #ff9933;
+    margin: 0 auto;
+}
+.record{margin: 35rpx auto;align-items: center;background-color: rgb(255, 251, 245);}
+.record .date{
+    font-size: 13pt;
+    font-weight: 800;
+    padding:20rpx;
+    color: #79cbd6;
+}
+.record .record_content{display: flex;align-items: flex-start;flex-direction: column;}
+.record .record_title{
+    font-size: 12pt;
+    font-weight: 600;
+    color:#fff;
+    padding:30rpx;
+    margin-left: 40rpx;
+    background-color:#ace9f1 ;
+    border-radius: 10px 10px 0 0;
+}
+.record .log_box{
+    border-top: 5rpx solid #ace9f1;
+    border-left: 5rpx solid #ace9f1;
+    border-right: 5rpx solid #ace9f1;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 50rpx;
+    margin-left: 20rpx;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    color:#75e6f5;
+    font-weight: 600;
+}
+.record .timer_box{
+    border-top: 5rpx solid #ace9f1;
+    border-left: 5rpx solid #ace9f1;
+    border-right: 5rpx solid #ace9f1;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 50rpx;
+    margin-left: 20rpx;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    color:#75e6f5;
+    font-weight: 600;
+}
+.clork_list{
+    display: flex;
+    bottom: 0;
+    position:fixed;
+    align-items: center;
+    width: 100%;
+}
+.clork_list button{
+    background-color:white;
+    font-size: 10pt;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+}
+.sample{
+    width: 750rpx;
+    height: 550rpx;
+}
+.clork_title{
+    position: absolute;
+    top:-40px;
+    font-size: 12pt;
+    font-weight: 800;
+    color: #fff;
+    left: 10px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
