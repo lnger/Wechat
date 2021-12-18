@@ -171,7 +171,7 @@ App({
     Habits_library:[
       {
         habit_icon:'icon/water.png',
-        habit_name:'醒来喝水',//习惯id
+        habit_name:'醒来喝水',
       },
       {
         habit_icon:'icon/breakfast.png',
@@ -192,6 +192,10 @@ App({
       {
         habit_icon:'icon/chiyao.png',
         habit_name:'吃药',
+      },
+      {
+        habit_icon:'icon/zhanli.png',
+        habit_name:'站立',
       },
       {
         habit_icon:'icon/e-mail.png',

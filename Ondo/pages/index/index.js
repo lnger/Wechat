@@ -52,8 +52,10 @@ Page({
     this.setData({
       hiddenmodalput: true
     });
+
     getApp().globalData.updateid=0;
     getApp().globalData.deleteid=0;
+
   },
   //确认
   confirm: function () {
@@ -72,7 +74,21 @@ Page({
            this.setData({
               hiddenmodalput: true,
             })
-      }  
+      }
+      for(var i=0;i<getApp().globalData.My_Habits[id].ClorkRecords.length;i++){
+          if(getApp().globalData.My_Habits[id].ClorkRecords[i].clork_time=='' + year + month + now.getDate()){
+            getApp().globalData.My_Habits[id].ClorkRecords[i].clork_time=null;
+          }
+      }
+      console.log(id)
+      for(var i=0;i<getApp().globalData.Logs.length;i++){
+        console.log(getApp().globalData.Logs[i].log_CreatedTime=='' + year + month + now.getDate())
+        console.log(getApp().globalData.Logs[i].habit_id==id+1)
+        if(getApp().globalData.Logs[i].log_CreatedTime=='' + year + month + now.getDate()&&getApp().globalData.Logs[i].habit_id==id+1){
+          getApp().globalData.Logs[i].log_CreatedTime=null;
+        }
+    }
+    console.log(getApp().globalData.Logs)
     }
     else{
       getApp().globalData.My_Habits[id].habit_num=num+1;
@@ -88,11 +104,9 @@ Page({
         clork_time:'' + year + month + now.getDate(),
       }]
       getApp().globalData.My_Habits[id].ClorkRecords=getApp().globalData.My_Habits[id].ClorkRecords.concat(newClork)
-    }
-    // console.log(num+' '+getApp().globalData.My_Habits[id].habit_num);
-    var i=app.globalData.Logs.length;
+       var i=app.globalData.Logs.length;
     console.log('before'+app.globalData.Logs.length);
-    if(this.data.log!=null){
+    if(this.data.log!=null&&this.data.log!=""){
       var newLog=[
          {
              log_id:i+1,
@@ -103,9 +117,11 @@ Page({
              log_CreatedTime:'' + year + month + now.getDate(),//日志的创建时间
           }
     ]
-
        app.globalData.Logs=app.globalData.Logs.concat(newLog);
        console.log(app.globalData.Logs);
+    }
+    // console.log(num+' '+getApp().globalData.My_Habits[id].habit_num);
+   
     }
     
     this.onShow()
