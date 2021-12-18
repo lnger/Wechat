@@ -1,0 +1,24 @@
+<view class="topBar">
+  <text>新增日记</text>
+</view>
+<view class="container">
+    <image class="bgp" src="../../images/bgp_5.png"></image> 
+    <view class="page-body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <view class="page-section" id="input_section">
+                <view class="page-section-title">书写日记</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__bd" style="margin: 30rpx 0">
+                            <textarea name="input" class="weui-input" id="text_input" cols="100" rows="100" placeholder='"今天......"'></textarea>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button id="reset" formType="reset">清空日志内容</button>
+                <button id="submit" type="primary" formType="submit">完成</button>
+            </view>
+        </form>
+    </view>
+</view>

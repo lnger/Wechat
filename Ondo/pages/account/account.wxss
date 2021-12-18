@@ -2,8 +2,10 @@
 .bgp{
   position: absolute;
   top: 0;
+  left: 0;
   z-index: -1;
-  height: 454.5px;
+  height: 1400rpx;
+  width: 100%;
   opacity:0.8;
 }
 .topBar{
@@ -24,6 +26,7 @@
 }
 .container{
     height: 100rpx;
+    width: 100%;
 }
 .userinfo {
     display: flex;

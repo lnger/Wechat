@@ -1,51 +1,50 @@
 <!--pages/timers/timers.wxml-->
 <view class="topBar">
 	<view class="title">
-		<text class="clorks">计时</text> 
+		<text class="clorks">计时</text>
 		<!-- 修改跳转至计时记录 -->
-		<navigator url="/pages/stat/stat?item={{3}}">  
+		<navigator url="/pages/stat/stat?item={{3}}">
 			<text class="fa fa-calendar-check-o" aria-hidden="true"></text>
 		</navigator>
-    </view>
+	</view>
 </view>
 <view class="container timer {{isRuning ? 'timer--runing': ''}}">
 	<image class="bgp" src="../../images/bgp_3.jpg"></image>
 	<view class="timer_main">
-		 <view class="timer_time-wrap">
-		 		<view class="timer_progress timer_left">
-		 			<view class="timer_circle timer_circle--left" ></view>
-		 		</view>
-		 		<view class="timer_progress timer_right">
-		 			<view class="timer_circle timer_circle--right"></view>
-		 		</view>
-				<button class='buttontype' bindtap="modalinput">
-                	<text wx:if="{{!completed}}" class="timer_time" >{{remainTimeText}}</text>
-                </button>
-			 	<!-- <input type="text" placeholder="00:00"></input> -->
-				 <modal hidden="{{hiddenmodalput}}" title="设置计时时间" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
- 					<input type='text'  bindinput="setTime" placeholder="请输入时间(分钟)" auto-focus/>
-				</modal>
-				 <text 
-			 		wx:if="{{isRuning}}" 
-			 		animation="{{nameAnimation}}" 
-			 		class="timer_taskName">{{taskName}}{{completed ?'结束' : '中' }}</text>
-		 		<text 
-		 			wx:if="{{completed}}" 
-		 			class="timer_done" 
-		 			>计时结束</text>
-		 </view>
-		 <input 
-		 	type="text" 
-		 	placeholder-style="text-align:center" 
-		 	class="timer_inputname" 
-		 	bindinput="changeLogName"
-		 	placeholder="选择要计时的习惯"/>
+		<view class="timer_time-wrap">
+			<view class="timer_progress timer_left">
+				<view class="timer_circle timer_circle--left"></view>
+			</view>
+			<view class="timer_progress timer_right">
+				<view class="timer_circle timer_circle--right"></view>
+			</view>
+			<button class='buttontype' bindtap="modalinput">
+				<text wx:if="{{!completed}}" class="timer_time">{{remainTimeText}}</text>
+			</button>
+			<!-- <input type="text" placeholder="00:00"></input> -->
+			<modal hidden="{{hiddenmodalput}}" title="设置计时时间" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+				<input type='text' bindinput="setTime" placeholder="请输入时间(分钟)" auto-focus />
+			</modal>
+			<text wx:if="{{completed}}" class="timer_done">计时结束</text>
+		</view>
+		<!--<view placeholder-style="text-align:center" class="timer_inputname" bindinput="selectTap">{{selectData[index]}}</view> -->
+		<view class="timer_inputname">
+			<picker bindchange="optionTap" value="{{index}}" range="{{selectData}}" >
+				<view>
+					<view bindtap="changeLogName">{{selectData[index]}}</view>
+				</view>
+			</picker>
+		</view>
 	</view>
-	
 	<view class="timer_footer">
-	  <view 
-	  	bindtap="startTimer" 
-	  	data-type="work" 
-	  	class="timer_ctrl" >{{isRuning ? '结束' : '开始'}}</view>
+		<view wx:if="{{!isRuning}}" bindtap="startTimer" data-type="work" class="timer_ctrl">开始</view>
+		<view wx:elif="{{isRuning && !isStop}}" bindtap="suspendTimer" data-type="work" class="timer_ctrl">暂停</view>
+		<view wx:elif="{{isRuning && isStop}}">
+			<view bindtap="suspendTimer" class="timer_ctrl_1">继续</view>
+			<view bindtap="startTimer" data-type="work" class="timer_ctrl_2">结束</view>
+		</view>
+
 	</view>
+
 </view>
+<!-- <view wx:if="{{!isStop}}" bindtap="startTimer" data-type="work" class="timer_ctrl">{{isRuning ? '暂停' : '开始'}}</view> -->

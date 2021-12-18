@@ -6,7 +6,19 @@ Page({
   data: {
 
   },
-
+  goAdd:function(e){
+    var id=e.target.id;
+    console.log(id);
+    wx.navigateTo({
+        url: "../../pages/habit_content/habit_content?id="+id
+      })
+  },
+  goAdd0:function(e){
+        var id=0;  //id=0标记该id需要重新分配
+        wx.navigateTo({
+            url: "../../pages/habit_content/habit_content?id="+id
+          })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

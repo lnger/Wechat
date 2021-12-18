@@ -24,32 +24,32 @@
 </view>
 <view class="user_list">
   <view class="list_body">
-  <navigator class="items" id="items_left" url="/pages/stat/stat?item={{1}}" bindtap="goStat">
+  <navigator class="items" id="items_left" url="/pages/stat/stat?item={{1}}">
   <view>
       <image src="../../icon/record_c.png">
       </image>
       <text>打卡记录</text>
     </view>
   </navigator>
-    <navigator class="items" id="items_right" url="/pages/stat/stat?item={{2}}" bindtap="goStat">
+    <navigator class="items" id="items_right" url="/pages/stat/stat?item={{2}}">
     <view>
       <image src="../../icon/record_l.png">
       </image>
        <text>日志</text>
     </view>
     </navigator>
-    <navigator class="items" id="items_left" url="/pages/stat/stat?item={{3}}" bindtap="goStat">
+    <navigator class="items" id="items_left" url="/pages/stat/stat?item={{3}}">
     <view>
        <image src="../../icon/record_t.png">
        </image>
        <text>计时记录</text>
     </view>
     </navigator>
-    <navigator class="items" id="items_right">
+    <navigator class="items" id="items_right" url="/pages/write_log/write_log">
     <view>
-     <image src="../../icon/set.png">
+     <image src="../../icon/log.png">
       </image>
-      <text>设置</text>
+      <text>书写日记</text>
     </view>
     </navigator>
   </view>

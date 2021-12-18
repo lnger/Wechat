@@ -5,6 +5,8 @@
     z-index: -1;
     height: 530px;
     opacity:0.8;
+    left: 0;
+    width: 100%;
   }
 .topBar{
     display: block;
@@ -102,6 +104,7 @@
     color: #79cbd6;
 }
 .record .record_content{display: flex;align-items: flex-start;flex-direction: column;}
+.record_block{display: flex;align-items: flex-start;flex-direction: column; width: 300px;}
 .record .record_title{
     font-size: 12pt;
     font-weight: 600;
@@ -115,7 +118,7 @@
     border-top: 5rpx solid #ace9f1;
     border-left: 5rpx solid #ace9f1;
     border-right: 5rpx solid #ace9f1;
-    width: 80%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 50rpx;
     margin-left: 20rpx;
@@ -124,11 +127,15 @@
     color:#75e6f5;
     font-weight: 600;
 }
+.record .log_box text{
+    display: block;
+    word-break:break-all;
+}
 .record .timer_box{
     border-top: 5rpx solid #ace9f1;
     border-left: 5rpx solid #ace9f1;
     border-right: 5rpx solid #ace9f1;
-    width: 80%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 50rpx;
     margin-left: 20rpx;
@@ -136,6 +143,10 @@
     border-radius: 10px 10px 0 0;
     color:#75e6f5;
     font-weight: 600;
+}
+.record .timer_box text{
+    display: block;
+    word-break:break-all;
 }
 .clork_list{
     display: flex;
@@ -151,9 +162,11 @@
     border-right: 1px solid #000;
     border-top: 1px solid #000;
 }
-.sample{
+.habits_canvas{
     width: 750rpx;
-    height: 550rpx;
+    display: block;
+    height: 420rpx;
+    margin-top: 80rpx;
 }
 .clork_title{
     position: absolute;
@@ -165,4 +178,41 @@
     padding: 5px;
     border: 2px solid white;
     border-radius: 15px;
+}
+.clork_box{
+    display: flex;
+    border-top: 5rpx solid #ace9f1;
+    border-left: 5rpx solid #ace9f1;
+    border-right: 5rpx solid #ace9f1;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 50rpx;
+    margin-left: 20rpx;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    color:#75e6f5;
+    font-weight: 600;
+    text-align: center;
+    flex-direction: row;
+}
+.clork_box image{
+    padding: 10px;
+    width: 100rpx;
+    height: 100rpx;
+}
+.clork_box text{
+    padding-top: 50rpx;
+    word-break:break-all;
+}
+.log_img {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 10rpx;
+}
+.timer_img{
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 10rpx;
 }

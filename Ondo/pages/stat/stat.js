@@ -16,18 +16,27 @@ Page({
         isToday: 0,
         isTodayWeek: false,
         todayIndex: 0,
-        today:0,
+        today: 0,
         Habit_or_Time:false,
+        records: [], //时间
+
+        logs:[],
+        myhabits:[],
+        ifHaveLog:false
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      const app=getApp()
+      global=app.globalData
         this.setData({
             item:options.item,
             clork:false,
             log:false,
             timer:false,
+            logs:global.Logs,
+            myhabits:global.My_Habits,
         })
         if(options.item==1){
             this.setData({
@@ -43,6 +52,7 @@ Page({
             this.setData({
                 timer:true
             })
+            this.getRecords()
         }
         let now = new Date();
         let year = now.getFullYear();
@@ -51,8 +61,19 @@ Page({
         this.setData({
           year: year,
           month: month,
+          today: now.getDate(),
           isToday: '' + year + month + now.getDate()
         })
+    },
+    getRecords: function () {
+      let records = wx.getStorageSync('records')||[]
+      records.forEach(function (item, index, arry) {
+        item.startTime = new Date(item.startTime).toLocaleString()
+      })
+      this.setData({
+        records: records
+      })
+      console.log(records)
     },
       dateInit: function (setYear, setMonth) {
         //全部时间的月份都是按0~11基准，显示月份才+1
@@ -137,6 +158,19 @@ Page({
           today:e.currentTarget.dataset.id,
         })
       },
+      ifHaveLogs:function(e){
+        const app=getApp()
+        var x=app.globalData.Logs
+        for(var i=0;i<x.length;i++){
+          console.log(x[i].log_CreatedTime)
+          if(e.currentTarget.dataset.id==x[i].log_CreatedTime){
+            this.setData({
+              ifHaveLog:true
+            })
+            break;
+          }
+        }
+      },
       HabitOrTime:function(e){
           console.log("触发HabitOrTime");
           console.log(e.currentTarget.dataset.id);
@@ -148,6 +182,56 @@ Page({
             this.setData({
                 Habit_or_Time:true,
               })
+              this.CreateCanvas()
           }
+      },
+      CreateCanvas:function(){
+        var that=this
+        const app=getApp()
+        var MH=app.globalData.My_Habits
+        var wxCharts = require('wxcharts.js');
+        var windowW=0;
+        this.setData({
+          imageWidth: wx.getSystemInfoSync().windowWidth
+        }) ;
+        console.log(this.data.imageWidth) ;
+        //计算屏幕宽度比列
+        windowW = this.data.imageWidth/375;    
+        var Icategories=new Array()
+        var Iseries=[{}]
+        var Idata=new Array()
+        for(var i=0;i<MH.length;i++){
+          Icategories[i]=MH[i].habit_name
+          Idata[i]=MH[i].habit_num
+        }
+        var Iseries=[{
+            name:'习惯列表',
+            data:Idata
+          }]
+        new wxCharts({
+          canvasId: 'columnCanvas',
+          type: 'column',
+          animation: true,
+          categories: Icategories,
+          series:Iseries,
+          yAxis: {
+            format: function (val) {
+              return val ;
+            },
+            title: '打卡次数',
+            min: 0
+          },
+          xAxis: {
+            disableGrid: false,
+            type: 'calibration'
+          },
+          extra: {
+            column: {
+              width: 25
+            }
+          },
+          width: 370,
+          height:220,
+        });    
       }
 })

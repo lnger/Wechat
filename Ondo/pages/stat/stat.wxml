@@ -1,10 +1,10 @@
 <!--pages/stat/stat.wxml-->
 <view class="topBar">
-  <text>统计</text>
-  <block wx:if="{{clork}}">
-      <view>
-          <text class="title">clork</text>
-      </view>
+    <text>统计</text>
+    <block wx:if="{{clork}}">
+        <view>
+            <text class="title">clork</text>
+        </view>
     </block>
     <block wx:elif="{{log}}">
         <text class="title">日志</text>
@@ -14,109 +14,145 @@
     </block>
 </view>
 <view class="container">
-  <image class="bgp" src="../../images/bgp_2.jpg"></image>
-  <view class="stat_list">
-    <block wx:if="{{clork}}">
-      <view class="clork_list">
-        <button bindtap="HabitOrTime" data-id="{{1}}">按日期分类</button> 
-        <button bindtap="HabitOrTime" data-id="{{2}}">按习惯分类</button>
-      </view>
-      <block wx:if="{{!Habit_or_Time}}">
-        <text class="clork_title">日期</text>
-        <!-- 日历年月 -->
-        <view class='calendar_title flex_nowrap'>
-            <view class='icon' bindtap='lastMonth'>
-                <image src='../../icon/arrow_left.png' />
+    <image class="bgp" src="../../images/bgp_2.jpg"></image>
+    <view class="stat_list">
+        <block wx:if="{{clork}}">
+            <view class="clork_list">
+                <button bindtap="HabitOrTime" data-id="{{1}}">按日期分类</button>
+                <button bindtap="HabitOrTime" data-id="{{2}}">按习惯分类</button>
             </view>
-        <view>{{year}}年{{month}}月</view>
-            <view class='icon' bindtap='nextMonth'>
-                <image src='../../icon/arrow_right.png' />
-            </view>
-        </view>
-        <!-- 日历主体 -->
-        <view class='calendar'>
-            <view class='header'>
-                <view wx:for='{{date}}' wx:key='' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
-                 <view></view>
+            <block wx:if="{{!Habit_or_Time}}">
+                <text class="clork_title">日期</text>
+                <!-- 日历年月 -->
+                <view class='calendar_title flex_nowrap'>
+                    <view class='icon' bindtap='lastMonth'>
+                        <image src='../../icon/arrow_left.png' />
+                    </view>
+                    <view>{{year}}年{{month}}月</view>
+                    <view class='icon' bindtap='nextMonth'>
+                        <image src='../../icon/arrow_right.png' />
+                    </view>
                 </view>
-            </view>
-
-            <view class='date-box'>
-                <block wx:for='{{dateArr}}' wx:key=''>
-                    <view class='{{isToday == item.isToday ? "nowDay" : ""}}'>
-                        <view class='date-head' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
-                        <view bindtap="TipToday" data-id="{{item.dateNum}}">{{item.dateNum}}</view>
+                <!-- 日历主体 -->
+                <view class='calendar'>
+                    <view class='header'>
+                        <view wx:for='{{date}}' wx:key='' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
+                            <view></view>
                         </view>
                     </view>
-                </block>
-            </view>
-        </view>
-      </block>
-      <block wx:else>
-        <text class="clork_title">习惯</text>
-        <image class="sample" src="../../sample_image/sample_table.jpg"></image>
-      </block> 
-      <view class="record">
-                <view class="date">{{year}}年{{month}}月{{today}}4日</view>
-                <view class="record_content">
-                    <text class="record_title">学习</text>
-                    <view class="timer_box">
-                        <text>15:00 进行打卡</text>
+                    <view class='date-box'>
+                        <block wx:for='{{dateArr}}' wx:key=''>
+                            <view class='{{isToday == item.isToday ? "nowDay" : ""}}'>
+                                <view class='date-head' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
+                                    <view bindtap="TipToday" data-id="{{item.dateNum}}">{{item.dateNum}}</view>
+                                </view>
+                            </view>
+                        </block>
                     </view>
                 </view>
-    </view>     
-    </block>
-    <block wx:else="{{!clork}}">
-        <!-- 日历年月 -->
-        <view class='calendar_title flex_nowrap'>
-            <view class='icon' bindtap='lastMonth'>
-                <image src='../../icon/arrow_left.png' />
-            </view>
-        <view>{{year}}年{{month}}月</view>
-            <view class='icon' bindtap='nextMonth'>
-                <image src='../../icon/arrow_right.png' />
-            </view>
-        </view>
-        <!-- 日历主体 -->
-        <view class='calendar'>
-            <view class='header'>
-                <view wx:for='{{date}}' wx:key='' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
-                 <view></view>
+            </block>
+            <block wx:else>
+                <text class="clork_title">习惯</text>
+                <view class="habits_canvas">
+                    <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas" style="width: 740rpx;height: 550rpx;font-weight: 500;"></canvas>
                 </view>
-            </view>
-
-            <view class='date-box'>
-                <block wx:for='{{dateArr}}' wx:key=''>
-                    <view class='{{isToday == item.isToday ? "nowDay" : ""}}'>
-                        <view class='date-head' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
-                        <view bindtap="TipToday" data-id="{{item.dateNum}}">{{item.dateNum}}</view>
-                        </view>
-                    </view>
-                </block>
-            </view>
-        </view>
-        <block wx:if="{{log}}">
+            </block>
             <view class="record">
-                <view class="date">{{year}}年{{month}}月{{today}}4日</view>
+                <view class="date">{{year}}年{{month}}月{{today}}日</view>
                 <view class="record_content">
-                    <text class="record_title">4号的日记</text>
-                    <view class="log_box">
-                        <text>这是4号的日记内容</text>
+                    <view wx:for="{{myhabits}}" wx:for-item="item" wx:for-index="index" wx:key="habit_id">
+                        <view wx:for="{{item.ClorkRecords}}" wx:for-item="clorks" wx:for-index="ci" wx:key="clork_id">
+                            <view class="record_block" wx:if="{{clorks.clork_time==''+year+month+today}}">
+                                <text class="record_title">{{today}}号的打卡</text>
+                                <view class="clork_box">
+                                    <image src="{{'../../'+item.habit_img}}"></image>
+                                    <text>{{item.habit_name}}</text>
+                                </view>
+                            </view>
+                        </view>
                     </view>
                 </view>
             </view>
         </block>
-        <block wx:elif="{{timer}}">
+        <block wx:else="{{!clork}}">
+            <!-- 日历年月 -->
+            <view class='calendar_title flex_nowrap'>
+                <view class='icon' bindtap='lastMonth'>
+                    <image src='../../icon/arrow_left.png' />
+                </view>
+                <view>{{year}}年{{month}}月</view>
+                <view class='icon' bindtap='nextMonth'>
+                    <image src='../../icon/arrow_right.png' />
+                </view>
+            </view>
+            <!-- 日历主体 -->
+            <view class='calendar'>
+                <view class='header'>
+                    <view wx:for='{{date}}' wx:key='' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}
+                        <view></view>
+                    </view>
+                </view>
+
+                <view class='date-box'>
+                    <block wx:for='{{dateArr}}' wx:key=''>
+                        <view bata-id="{{item.isToday}}" class='{{isToday == item.isToday ? "nowDay" : ""}}'>
+                            <view class='date-head' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
+                                <view bindtap="TipToday" data-id="{{item.dateNum}}">{{item.dateNum}}</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <block wx:if="{{log}}">
+                <view class="record">
+                    <view class="date">{{year}}年{{month}}月{{today}}日</view>
+                    <view class="record_content">
+                        <view wx:for="{{logs}}" wx:for-item="item" wx:for-index="index" wx:key="log_id">
+                            <view class="record_block" wx:if="{{item.log_CreatedTime==''+year+month+today}}">
+                                <text class="record_title">{{today}}号的日记</text>
+                                <view wx:for="{{myhabits}}" wx:for-item="mh" wx:for-index="mhi" wx:key="habit_id">
+                                    <view wx:if="{{mh.habit_id==item.habit_id}}">
+                                        <image class="log_img" src="{{'../../'+mh.habit_img}}"></image>
+                                    </view>
+                                </view>
+                                <view class="log_box">
+                                    <view wx:for="{{myhabits}}" wx:for-item="mh" wx:for-index="mhi" wx:key="habit_id">
+                                        <view wx:if="{{mh.habit_id==item.habit_id}}">
+                                            <text>{{'('+mh.habit_name+')'+'\n'}}</text>
+                                        </view>
+                                    </view>
+                                    <text>{{item.log_content}}</text>
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+    
+
+</block>
+<block wx:elif="{{timer}}">
             <view class="record">
-                <view class="date">{{year}}年{{month}}月{{today}}4日</view>
-                <view class="record_content">
-                    <text class="record_title">学习</text>
-                    <view class="timer_box">
-                        <text>16分钟</text>
+                <view class="date">{{year}}年{{month}}月{{today}}日</view>
+                <view class="record_content"  wx:for="{{records}}" wx:for-index="index" wx:for-item="item">
+                     <view class="record_block" wx:if="{{''+item.year+item.month+item.day==''+year+month+today}}">
+                        <text class="record_title">{{item.name}}</text>
+                        <view wx:for="{{myhabits}}" wx:for-item="mh" wx:for-index="mhi" wx:key="habit_id">
+                    <view wx:if="{{mh.habit_name==item.name}}">
+                        <image class="timer_img" src="{{'../../'+mh.habit_img}}"></image>
+                    </view>
+                </view>
+                        <view class="timer_box">
+                            <text>{{item.startTime}} 开始\n</text>
+                            <text>定时 {{item.keepTime}}分钟\n</text>
+                            <text>计时 {{item.keepM}}分{{item.keepS}}秒</text>
+                            <!-- <text>{{item.startTime}}\n</text>
+                            <text>{{item.keepTime}}分钟</text> -->
+                        </view>
                     </view>
                 </view>
             </view>  
         </block>
-    </block>
-  </view>
+</block>
+</view>
 </view>

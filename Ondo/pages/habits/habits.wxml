@@ -1,27 +1,40 @@
 <!--pages/habits/habits.wxml-->
-<page class="body0">
+<page>
   <image class="bgp" src="../../images/bgp_2.jpg"></image>
+  <view class="header0">
   <view class="header">   
     <view class='header-text'>我的习惯</view>
-    <navigator url="/pages/habits_add/habits_add">
-      <view class="modular1"><text class="fa-plus-square-o"></text></view> 
-    </navigator>  
+      <view bindtap="goAdd" class="modular1"><text class="fa-plus-square-o"></text></view> 
   </view>
   <view class="header1">
-    <view class="header1-text">全部</view>
-    <view class="modular2"><text class="fa-chevron-up"></text></view>
+    <view class="header1-text">{{isshow?"全部":"展开"}}</view>
+    <view class="modular2" catchtap="show" wx:if="{{isshow}}">
+    <text class="fa-chevron-up"></text></view>
+    <view class="modular2" catchtap="show" wx:else>
+    <text class="fa-chevron-down"></text></view>
   </view>
-  
-  <navigator url="/pages/stat/stat?item={{1}}">
-  <view class="body">
-   <image class="habits-images" src="../../icon/chiyao.png" background-size="cover"></image>
-    <text class="name">吃药</text>
-    <text class="time">1天</text>
-    </view>  
-  </navigator>
-  <navigator url="/pages/habits_add/habits_add">
+</view>
+
+  <view class="hr">
+  <navigator url="/pages/stat/stat?item={{1}}"  hover-class="none">
+  <view wx:if="{{isshow?'hide':''}}" >
+  <view class="body {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="id">
+    <view class="content">
+      <image class="habits-images" wx:if="{{item.img}}" src="{{item.img}}" background-size="cover"></image>
+      <text class="name">{{item.name}}</text>
+      <text class="time">{{item.num}}天</text>
+    </view>
+    <view class="finish" catchtap="finish" data-index="{{index}}">结束</view>   
+    <view class="edit" catchtap="edit" data-index="{{index}}">编辑</view>
+    <view class="del" catchtap="del" data-index="{{index}}">删除</view>   
+  </view>  
+  </view>
+</navigator>
+
+  <navigator url="/pages/habits_add/habits_add" hover-class="none">
     <view class="body1">
       <view class="body-text">+ 添加习惯</view>  
     </view>
   </navigator> 
+</view>
 </page>

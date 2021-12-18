@@ -1,6 +1,9 @@
 <!--index.wxml-->
 <view class="topBar">
-  <text class="clorks">今日习惯</text>
+  <view class="add">
+    <text class="clorks">今日习惯</text>
+    <image src="../../icon/add.png" bindtap="goAdd"></image>
+  </view>
   <view class="search">
       <image src="../../icon/search.png" mode="aspectFit"></image>
     <input style='display:inline-block;height:100%;margin-left: -50rpx;' placeholder-style='font-size:14px;letter-spacing:10rpx;' placeholder='输入习惯名'></input>
@@ -10,12 +13,22 @@
 <view class="container">
     <image class="bgp" src="../../images/bgp_4.jpg"></image>
     <view class="grid_view">
-        <view class="item"  wx:for="{{icons}}">
-           <view class="item_icon" hover-class="item_click">
-                   <image src="{{item.pic}}"></image>
+        <view class="item"  wx:for="{{icons}}" wx:key="icon">
+           <view class="item_icon" hover-class="item_click" style="background: {{item.color}}">
+                   <image  id="{{item.id}}" bindtap="record" src="{{item.pic}}" ></image>
            </view>  
           <text>{{item.name}}</text>
-          <text wx:if="{{item.days}}">{{item.days}}</text>
+          <text wx:if="{{item.num!=0}}">完成{{item.num}}天</text>
       </view>  
     </view>
 </view>
+  <modal class="model" hidden="{{hiddenmodalput}}" title="习惯记录" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <view class='record_button'>
+        <button class="button" bindtap="choose" id='b1' style="background: #66C87D;;">完成</button>
+        <button class="button" bindtap="choose" id='b2' style="margin-left: 20rpx;">失败</button>
+      </view>
+      <view class='write'>
+        <input class='text' bindinput="log" value="" style="padding-left: 8px;padding-top: 3px;"></input>
+      </view>
+
+  </modal>

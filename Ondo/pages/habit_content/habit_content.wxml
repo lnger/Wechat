@@ -1,0 +1,53 @@
+<!--habit_content.wxml-->
+<image class="bgp" src="../../images/bgp_2.jpg"></image>
+<view class='icon_view'>
+    <image class='icon' src="{{habit.icon}}" background-size="cover"></image>
+</view>
+
+<view class="habit_name">
+    <text style="padding-left: 4px;"> 给该习惯命名 :</text>
+    <input placeholder="{{habit.name}}" bindinput="name" value="{{habit.name}}"></input>
+</view>
+
+<view class="habit_num">
+    <text class="num_name" style="padding-left: 4px;"> 习惯打卡频次 :</text>
+    <view class="choose_button" bindtap="chooseNum">
+        <view id='1' class='one'>固定</view>
+        <view id='2' class='two'>每周</view>
+        <view id='3' class='three'>每月</view>
+    </view>
+    <view style="margin-top: 10px;">
+        <view class='days' bindtap="days" style="display: {{config.config1}}"> 
+            <view class='day' wx:for="{{days}}" wx:key="day">
+                    <text>{{item.value}}</text>
+            </view>
+         </view>
+   
+        <view class='week' style="display: {{config.config2}}">
+        <text style="margin-right: 5px;margin-left: 5px;">每周</text>
+            <input style="width: 40px;height: 25px; background-color: #F7F8F3; text-align: center;border-radius: 3px;display:inline-flex;" placeholder="0" bindinput="customTime1" value="{{item.customTime*7}}"></input>
+        <text style="margin-left: 5px;">天</text>
+        </view>
+
+        <view class='month' style="display: {{config.config3}}">
+        <text style="margin-right: 5px;margin-left: 5px;">每月</text>
+            <input style="width: 40px;height: 25px; background-color: #F7F8F3; text-align: center;border-radius: 3px;display:inline-flex;" placeholder="0" bindinput="customTime2" value="{{item.customTime*30}}"></input>
+        <text style="margin-left: 5px;">天</text>
+        </view>
+
+    </view>
+</view>
+
+<view class="habit_time">
+    <text class="time_name" style="padding-left: 4px;"> 习惯打卡情景 :</text>
+    <view class='choose_time'>
+         <view class="time_item"  wx:for="{{habit_times}}" wx:key="time">
+            <text>{{item.value}}</text>
+        </view>
+    </view>
+</view>
+<view class="habit_name" style="margin-top: 30px;">
+    <text style="padding-left: 4px;"> 写一句话来激励自己 :</text>
+    <input placeholder='坚持就是胜利'></input>
+</view>
+<view class="bt" catchtap="sub">确认</view>

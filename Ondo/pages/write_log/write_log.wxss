@@ -1,0 +1,79 @@
+/* pages/write_log/write_log.wxss */
+.bgp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 1400rpx;
+    width: 100%;
+    opacity:0.7;
+  }
+.topBar{
+    display: block;
+    height: 40px;
+    text-align: center;
+    background-color: #2BB6C9;
+  
+  }
+  .topBar text{
+    letter-spacing: 3px;
+    display: block;
+    padding-top: 6px;
+    padding-left: 5px;
+    font-size: 48rpx;
+    color:white;
+    font-weight: 800;
+  }
+  .container{position: relative;}
+.page-body{
+    position:absolute;
+    top: 10px;
+}
+.page-section{
+    font-size: 15pt;
+    font-weight: 800;
+    padding: 20rpx;
+    text-align: center;
+    color:rgb(1, 69, 100);
+}
+  #input_section{
+      width: 680rpx;
+      margin: 10rpx auto;
+      opacity: 0.9;
+      background-color:#b4caeb;
+      border-radius: 40rpx;
+      padding-left: 20rpx;
+      padding-right: 20rpx;
+      padding-top: 20rpx;
+      padding-bottom: 100rpx;
+      border: #000 solid 1px;
+  }
+  #input_section .weui-cell__bd{
+    border-radius: 20rpx;
+  }
+  .page-section .weui-cells .weui-cell .weui-cell__bd{
+      padding: 15rpx;
+      text-align: left;
+      height:650rpx;
+      z-index: -1;
+      background-color:#fff;
+      color: #000;
+      border: #fff solid 1px;
+  }
+  #text_input{
+    width: 670rpx;
+  }
+  .btn-area{
+      display: flex;
+      position: absolute;
+      left: 5px;
+      width: 80%;
+      z-index: 100;
+  }
+  .btn-area button{
+      position:absolute;
+      border-radius: 40rpx;
+      font-weight: 800;
+  }
+  #reset{top: -45px;width: 50%;font-size: 9pt;right: -40px;background-color: #69f;color: white;}
+  #submit{top:30px;left: 25%;background-color: #2BB6C9;color: white;letter-spacing: 5px;border-radius: 5px;}

@@ -13,7 +13,10 @@
   text-align: center;
   background-color:#2BB6C9;
 }
-
+.add{
+  width: 100%;
+  height:26px;
+}
 .clorks{
   display: block;
   padding-top:5px;
@@ -23,6 +26,13 @@
   border-bottom-width:10px;
   border-bottom-color: white;
   letter-spacing:8rpx;
+}
+.add image{
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 660rpx;
+  top:5rpx;
 }
 .search{
   margin-top: 10px;
@@ -50,37 +60,33 @@
 .grid_view{
   opacity:0.8;
   display: grid;
-  width: 100%;
+  width: 90%;
   position: absolute;
   top: 5px;
-  /* background-color:green; */
   grid-template-columns:repeat(3,100px);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  justify-content: center;
+  justify-content: space-around;
 }
 /* 每块grid 包括图标和文字*/
 .item{
   width: 70px;
   height: 80px;
-  margin-top: 20px;
+  margin-top: 28px;
   margin-left: 10px;
 }
 /* 外层的圆框 */
 .item_icon{
-  background-color: white;
+  background-color: "white";
   margin: auto;
   border: 2px solid black;
-  width: 60px;
-  height: 60px;
-  border-radius:60px;
-  /* background-color: red; */
+  width: 50px;
+  height: 50px;
+  border-radius:50px;
   justify-content: center;
 }
-.item_icon:hover{
-  background-color: #FC6C6C;
-}
 .item text{
+  margin-top: 3dp;
   text-align: center;
   display:block;
 }
@@ -88,8 +94,32 @@
   display: block;
   margin: auto;
   margin-top: 8px;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   padding: 3rpx;
+  background-size: cover;
 }
- 
+.record_button{
+   margin-top: 10px;
+   margin-bottom: 15px;
+   margin-left: 60rpx;
+   /* width: 100%; */
+}
+.button{
+  display: inline;
+  width: 60px;
+}
+.button:hover{
+  /* display: inline;
+  width: 33%;
+  height: 35px; */
+  background: #66C87D;
+}
+.write{
+  margin-top: 18px;
+  border-radius: 8px;
+  border:1px solid gray;
+  width: 92%;
+  margin-left: 15rpx;
+  height:130px;
+}
