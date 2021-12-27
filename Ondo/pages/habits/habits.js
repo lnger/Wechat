@@ -16,19 +16,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this;
-    // for (var i=0;i<app.globalData.My_Habits.length;i++){
-    //     that.data.items.push({
-    //       id:app.globalData.My_Habits[i].habit_id,
-    //       name:app.globalData.My_Habits[i].habit_name,
-    //       num:app.globalData.My_Habits[i].habit_num,
-    //       img:"../../"+app.globalData.My_Habits[i].habit_img,
-    //       isTouchMove: false //默认隐藏删除
-    //    })
-    //   that.setData({
-    //     items: that.data.items    
-    //   }); 
-    // }  
+    var that = this;
+    for (var i=0;i<app.globalData.My_Habits.length;i++){
+      if(app.globalData.My_Habits[i].habit_finishedTime==''){
+          that.data.items.push({
+            id:app.globalData.My_Habits[i].habit_id,
+            name:app.globalData.My_Habits[i].habit_name,
+           num:app.globalData.My_Habits[i].habit_num,
+            img:"../../"+app.globalData.My_Habits[i].habit_img,
+            isTouchMove: false //默认隐藏删除
+        })
+      }else{
+        continue;
+      }
+        
+      that.setData({
+        items: that.data.items    
+      }); 
+    }  
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -44,13 +49,17 @@ Page({
     var that = this;
     that.data.items=[];
     for (var i=0;i<app.globalData.My_Habits.length;i++){
+      if(app.globalData.My_Habits[i].habit_finishedTime==''){
         that.data.items.push({
           id:app.globalData.My_Habits[i].habit_id,
           name:app.globalData.My_Habits[i].habit_name,
-          num:app.globalData.My_Habits[i].habit_num,
+         num:app.globalData.My_Habits[i].habit_num,
           img:"../../"+app.globalData.My_Habits[i].habit_img,
           isTouchMove: false //默认隐藏删除
-       })
+      })
+    }else{
+      continue;
+    }
       that.setData({
         items: that.data.items    
       }); 
@@ -192,11 +201,14 @@ touchstart: function (e) {
   },
   //结束事件
   finish:function(e){
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth() + 1;
     var Id=this.data.items[e.currentTarget.dataset.index].id;
     this.data.items.splice(e.currentTarget.dataset.index, 1) ; 
     for (var i=0;i<app.globalData.My_Habits.length;i++){
       if(app.globalData.My_Habits[i].habit_id==Id){
-        app.globalData.My_Habits[i].habit_finishedTime=new Date();
+        app.globalData.My_Habits[i].habit_finishedTime='' + year + month + now.getDate();
       }
     }
     this.setData({

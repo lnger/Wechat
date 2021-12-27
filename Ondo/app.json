@@ -6,7 +6,9 @@
     "pages/habits_add/habits_add",
     "pages/timers/timers",
     "pages/stat/stat",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/write_log/write_log",
+    "pages/habit_content/habit_content"
   ],
   "window": {
     "backgroundTextStyle": "light",

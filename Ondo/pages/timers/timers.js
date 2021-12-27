@@ -1,4 +1,5 @@
-const util = require('../../utils/util.js')
+const util = require('../../utils/util.js');
+const app = getApp();
 const defaultLogName = {
   work: '计时',
 }
@@ -24,13 +25,17 @@ Page({
     index: 0,//选择的下拉列表下标
   },
   onLoad:function(){
-    const app = getApp();
     var tmp=new Array();
     tmp[0]="未选择习惯"
     var myhabits=app.globalData.My_Habits
     for(var i=0;i<myhabits.length;i++){
-      var x=myhabits[i].habit_name
-      tmp[i+1]=x
+      if(myhabits[i].habit_finishedTime==''){
+        var x=myhabits[i].habit_name
+        tmp.push(x)
+      }
+      else{
+        continue;
+      }
     }
     this.setData({
       selectData:tmp
@@ -83,6 +88,21 @@ Page({
     })
   },
   onShow: function () {
+    var tmp=new Array();
+    tmp[0]="未选择习惯"
+    var myhabits=app.globalData.My_Habits
+    for(var i=0;i<myhabits.length;i++){
+      if(myhabits[i].habit_finishedTime==''){
+        var x=myhabits[i].habit_name
+        tmp.push(x)
+      }
+      else{
+        continue;
+      }
+    }
+    this.setData({
+      selectData:tmp
+    })
     if (this.data.isRuning) return
     let workTime = util.formatTime(wx.getStorageSync('workTime'), 'HH')
     this.setData({

@@ -221,7 +221,7 @@ Page({
              ClorkRecords:[{
                   clork_id:null,
                   habit_id:null,
-                  clork_time:''+year+month+now.getDate(),}]}); 
+                  clork_time:'',}]}); 
              getApp().globalData.habitsnum=getApp().globalData.habitsnum+1;
          console.log(getApp().globalData.habitsnum);
     }

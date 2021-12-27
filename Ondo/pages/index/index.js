@@ -144,15 +144,21 @@ Page({
   onShow(){
     this.data.icons=[];
     for (var i=0;i<app.globalData.My_Habits.length;i++){
-      if(!app.globalData.My_Habits[i].if_DoTodayClork) var c="#fff" ;
+      if(!app.globalData.My_Habits[i].if_DoTodayClork) 
+          var c="#fff" ;
       else var c="#2BB6C9" ;
-        this.data.icons.push({
+    if(app.globalData.My_Habits[i].habit_finishedTime==''){
+      this.data.icons.push({
           id:app.globalData.My_Habits[i].habit_id,
           name:app.globalData.My_Habits[i].habit_name,
           num:app.globalData.My_Habits[i].habit_num,
           pic:"../../"+app.globalData.My_Habits[i].habit_img,
           color:c
-       })}
+       })
+      }
+      else{
+        continue;
+      }
  
       this.setData({
         icons: this.data.icons    
@@ -177,8 +183,8 @@ Page({
     //     type:0
     // })
     //  }
-  },
-  getUserProfile(e) {
+  }},
+  getUserProfile(e){
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写

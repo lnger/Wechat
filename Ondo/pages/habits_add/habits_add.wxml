@@ -11,28 +11,28 @@
         <text class="header2"> 健康</text>
       </text>
       <view id='1' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/water.png" background-size="cover"></image>
-        <text class="habits-text">醒来喝水</text>
+        <image id='1' class="habits-images" src="../../icon/water.png" background-size="cover"></image>
+        <text id='1' class="habits-text">醒来喝水</text>
       </view>
       <view id='2' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/breakfast.png" background-size="cover"></image>
-        <text class="habits-text">吃早饭</text>
+        <image id='2' class="habits-images" src="../../icon/breakfast.png" background-size="cover"></image>
+        <text id='2' class="habits-text">吃早饭</text>
       </view>
       <view id='3' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/teeth.png" background-size="cover"></image>
-        <text class="habits-text">睡前刷牙</text>
+        <image id='3' class="habits-images" src="../../icon/teeth.png" background-size="cover"></image>
+        <text id='3' class="habits-text">睡前刷牙</text>
       </view>
       <view id='4' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/sleep.png" background-size="cover"></image>
-        <text class="habits-text">早睡</text>
+        <image id='4' class="habits-images" src="../../icon/sleep.png" background-size="cover"></image>
+        <text id='4' class="habits-text">早睡</text>
       </view>
       <view id='5' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/run.png" background-size="cover"></image>
-        <text class="habits-text">跑步</text>
+        <image id='5' class="habits-images" src="../../icon/run.png" background-size="cover"></image>
+        <text id='5' class="habits-text">跑步</text>
       </view>
       <view id='6' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/chiyao.png" background-size="cover"></image>
-        <text class="habits-text">吃药</text>
+        <image id='6' class="habits-images" src="../../icon/chiyao.png" background-size="cover"></image>
+        <text id='6' class="habits-text">吃药</text>
       </view>
     </view>
     <view class="other">
@@ -41,28 +41,28 @@
         <text class="header2"> 工作</text>
       </text>   
       <view id='7' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/zhanli.png" background-size="cover"></image>
-        <text class="habits-text">站立</text>
+        <image id='7' class="habits-images" src="../../icon/zhanli.png" background-size="cover"></image>
+        <text id='7' class="habits-text">站立</text>
       </view>
       <view id='8' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/e-mail.png" background-size="cover"></image>
-        <text class="habits-text">清查邮件</text>
+        <image id='8' class="habits-images" src="../../icon/e-mail.png" background-size="cover"></image>
+        <text id='8' class="habits-text">清查邮件</text>
       </view>
       <view id='9' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/tea.png" background-size="cover"></image>
-        <text class="habits-text">喝茶</text>
+        <image id='9' class="habits-images" src="../../icon/tea.png" background-size="cover"></image>
+        <text id='9' class="habits-text">喝茶</text>
       </view>
       <view id='10' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/daka.png" background-size="cover"></image>
-        <text class="habits-text">打卡</text>
+        <image id='10' class="habits-images" src="../../icon/daka.png" background-size="cover"></image>
+        <text id='10' class="habits-text">打卡</text>
       </view>
       <view id='11' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/daiban.png" background-size="cover"></image>
-        <text class="habits-text">写待办事项</text>
+        <image id='11' class="habits-images" src="../../icon/daiban.png" background-size="cover"></image>
+        <text id='11' class="habits-text">写待办事项</text>
       </view>
       <view id='12' class="block1" bindtap="goAdd">
-        <image class="habits-images" src="../../icon/fanqie.png" background-size="cover"></image>
-        <text class="habits-text">使用番茄钟</text>
+        <image id='12' class="habits-images" src="../../icon/fanqie.png" background-size="cover"></image>
+        <text id='12' class="habits-text">使用番茄钟</text>
       </view>
     </view>
     <view class="other" bindtap="goAdd">
@@ -71,28 +71,28 @@
         <text class="header2"> 学习</text>
       </text>   
       <view id='13' class="block1">
-        <image class="habits-images" src="../../icon/read.png" background-size="cover"></image>
-        <text class="habits-text">阅读</text>
+        <image id='13' class="habits-images" src="../../icon/read.png" background-size="cover"></image>
+        <text id='13' class="habits-text">阅读</text>
       </view>
       <view id='14' class="block1">
-        <image class="habits-images" src="../../icon/read1.png" background-size="cover"></image>
-        <text class="habits-text">背单词</text>
+        <image id='14' class="habits-images" src="../../icon/read1.png" background-size="cover"></image>
+        <text id='14' class="habits-text">背单词</text>
       </view>
       <view id='15' class="block1">
-        <image class="habits-images" src="../../icon/kill.png" background-size="cover"></image>
-        <text class="habits-text">练习新技能</text>
+        <image id='15' class="habits-images" src="../../icon/kill.png" background-size="cover"></image>
+        <text id='15' class="habits-text">练习新技能</text>
       </view>
       <view id='16' class="block1">
-        <image class="habits-images" src="../../icon/xiuxi.png" background-size="cover"></image>
-        <text class="habits-text">休息一下</text>
+        <image id='16' class="habits-images" src="../../icon/xiuxi.png" background-size="cover"></image>
+        <text id='16' class="habits-text">休息一下</text>
       </view>
       <view id='17' class="block1">
-        <image class="habits-images" src="../../icon/zhuanyan.png" background-size="cover"></image>
-        <text class="habits-text">转眼运动</text>
+        <image id='17' class="habits-images" src="../../icon/zhuanyan.png" background-size="cover"></image>
+        <text id='17' class="habits-text">转眼运动</text>
       </view>
       <view id='18' class="block1">
-        <image class="habits-images" src="../../icon/tanyueqi.png" background-size="cover"></image>
-        <text class="habits-text">弹乐器</text>
+        <image id='18' class="habits-images" src="../../icon/tanyueqi.png" background-size="cover"></image>
+        <text id='18' class="habits-text">弹乐器</text>
       </view>
     </view>
     <view class="other" bindtap="goAdd">
@@ -101,28 +101,28 @@
         <text class="header2"> 日常</text>
       </text>   
       <view id='19' class="block1">
-        <image class="habits-images" src="../../icon/dazuo.png" background-size="cover"></image>
-        <text class="habits-text">打坐冥想</text>
+        <image id='19' class="habits-images" src="../../icon/dazuo.png" background-size="cover"></image>
+        <text id='19' class="habits-text">打坐冥想</text>
       </view>
       <view id='20' class="block1">
-        <image class="habits-images" src="../../icon/jizhang.png" background-size="cover"></image>
-        <text class="habits-text">记账</text>
+        <image id='20' class="habits-images" src="../../icon/jizhang.png" background-size="cover"></image>
+        <text id='20' class="habits-text">记账</text>
       </view>
       <view id='21' class="block1">
-        <image class="habits-images" src="../../icon/riji.png" background-size="cover"></image>
-        <text class="habits-text">写日记</text>
+        <image id='21' class="habits-images" src="../../icon/riji.png" background-size="cover"></image>
+        <text id='21' class="habits-text">写日记</text>
       </view>
       <view id='22' class="block1">
-        <image class="habits-images" src="../../icon/jiaohua.png" background-size="cover"></image>
-        <text class="habits-text">浇花</text>
+        <image id='22' class="habits-images" src="../../icon/jiaohua.png" background-size="cover"></image>
+        <text id='22' class="habits-text">浇花</text>
       </view>
       <view id='23' class="block1">
-        <image class="habits-images" src="../../icon/liugou.png" background-size="cover"></image>
-        <text class="habits-text">遛狗</text>
+        <image id='23' class="habits-images" src="../../icon/liugou.png" background-size="cover"></image>
+        <text id='23' class="habits-text">遛狗</text>
       </view>
       <view id='24' class="block1">
-        <image class="habits-images" src="../../icon/pengy.png" background-size="cover"></image>
-        <text class="habits-text">探望朋友</text>
+        <image id='24' class="habits-images" src="../../icon/pengy.png" background-size="cover"></image>
+        <text id='24' class="habits-text">探望朋友</text>
       </view>
     </view>
   </view> 
